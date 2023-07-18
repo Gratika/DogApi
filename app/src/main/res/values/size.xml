@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="parent_padding">16dp</dimen>
+    <dimen name="element_margin">5dp</dimen>
+    <dimen name="min_width_spinner">60dp</dimen>
+    <dimen name="min_height_spinner">20dp</dimen>
+</resources>

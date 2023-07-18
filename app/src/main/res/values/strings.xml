@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DogImage</string>
+    <string name="breed_text">Breed dog</string>
+</resources>
