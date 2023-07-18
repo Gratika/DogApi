@@ -29,15 +29,20 @@ public class BreedSpinerLisener  extends AppCompatActivity implements AdapterVie
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        try{
-            Optional<String>  imageUrl= new BreedImageApi((adapterView.getItemAtPosition(i)).toString())
-                    .getRandomBreedImage();
-            getImageData(imageUrl);
-        }
-        catch (Exception e){
-            Log.d("breedImageApi", "Error: "+e.getMessage());
-            e.printStackTrace();
-        }
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Optional<String> imageUrl = new BreedImageApi((adapterView.getItemAtPosition(i)).toString())
+                                .getRandomBreedImage();
+                        getImageData(imageUrl);
+                    } catch (Exception e) {
+                        Log.d("breedImageApi", "Error: " + e.getMessage());
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
 
 
 
